@@ -8,13 +8,15 @@ import { HttpClientTestingModule, HttpTestingController } from '@angular/common/
 describe('StaffList component', () => {
   let component: StaffList;
   let fixture: ComponentFixture<StaffList>;
+  let authService: JsonApiService;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      
       declarations: [ StaffList ],
-      schemas: [
-        CUSTOM_ELEMENTS_SCHEMA
-      ],
+      // schemas: [
+      //   CUSTOM_ELEMENTS_SCHEMA
+      // ],
       imports: [RouterTestingModule, HttpClientTestingModule],
       providers: [JsonApiService]
     })
@@ -25,6 +27,8 @@ describe('StaffList component', () => {
     fixture = TestBed.createComponent(StaffList);
     component = fixture.componentInstance;
     fixture.detectChanges();
+    authService = TestBed.get(JsonApiService); 
+
   });
 
   it('should create', () => {

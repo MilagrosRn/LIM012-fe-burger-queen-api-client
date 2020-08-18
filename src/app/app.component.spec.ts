@@ -40,10 +40,10 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('BQ API');
   });
 
-  it(`should have a VerticalMenuComponent`, () => {
-    const component = new VerticalMenuComponent(router);
-    expect(component).toBeTruthy();
-  });
+  // it(`should have a VerticalMenuComponent`, () => {
+  //   const component = new VerticalMenuComponent(router);
+  //   expect(component).toBeTruthy();
+  // });
 
 
 });

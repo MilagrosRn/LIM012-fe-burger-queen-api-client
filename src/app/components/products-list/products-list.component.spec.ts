@@ -7,49 +7,49 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { ProductsService } from 'src/app/services/products.service';
 
 describe('ProductsListComponent', () => {
-//   let component: ProductsListComponent;
-//   let fixture: ComponentFixture<ProductsListComponent>;
-// let activatedRoute
-//   beforeEach(async(() => {
-//     // const route= ProductsService
-//     // const fakeRoute = {
-//     //   snapshot: {
-//     //     routeConfig: {
-//     //       path: 'inventario',
-//     //     },
-//     //   } as Partial<ActivatedRouteSnapshot>,
-//     // } as ActivatedRoute;
+  let component: ProductsListComponent;
+  let fixture: ComponentFixture<ProductsListComponent>;
+let activatedRoute
+  beforeEach(async(() => {
+    // const route= ProductsService
+    // const fakeRoute = {
+    //   snapshot: {
+    //     routeConfig: {
+    //       path: 'inventario',
+    //     },
+    //   } as Partial<ActivatedRouteSnapshot>,
+    // } as ActivatedRoute;
 
-//     // component = new ProductsListComponent(route,fakeRoute);
-//     // component.ngOnInit();
-//     TestBed.configureTestingModule({
-//       imports:[
-//         HttpClientTestingModule,
-//         RouterTestingModule.withRoutes([])      
-//     ],
-//       declarations: [ ProductsListComponent ],
-//       providers:[
-//         ProductsService,
-//         {
-//             provide: ActivatedRoute,
-//             useValue: {
-//               snapshot: {
-//                 routeConfig: {
-//                     path: 'inventario',
-//                 },
+    // component = new ProductsListComponent(route,fakeRoute);
+    // component.ngOnInit();
+    TestBed.configureTestingModule({
+      imports:[
+        HttpClientTestingModule,
+        RouterTestingModule.withRoutes([])      
+    ],
+      declarations: [ ProductsListComponent ],
+      providers:[
+        ProductsService,
+        {
+            provide: ActivatedRoute,
+            useValue: {
+              snapshot: {
+                routeConfig: {
+                    path: 'inventario',
+                },
                
-//               }
-//             }
-//           }
-//       ]
-//     })
-//     .compileComponents().then(() => {
-//         fixture = TestBed.createComponent(ProductsListComponent);
-//         component = fixture.debugElement.componentInstance;
-//         activatedRoute = TestBed.get(ActivatedRoute);
-//         fixture.detectChanges();
-//       });
-//   }));
+              }
+            }
+          }
+      ]
+    })
+    .compileComponents().then(() => {
+        fixture = TestBed.createComponent(ProductsListComponent);
+        component = fixture.debugElement.componentInstance;
+        activatedRoute = TestBed.get(ActivatedRoute);
+        fixture.detectChanges();
+      });
+  }));
 //   it('espera que devuleva la ruta inventario', async () => {
 //     expect(activatedRoute.snapshot.routeConfig.path).toEqual('inventario');
 //  });

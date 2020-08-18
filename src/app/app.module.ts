@@ -4,7 +4,6 @@ import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
 
 import { AdminComponent } from './views/admin/admin.component';
 import { HeaderComponent } from './components/header/header.component';

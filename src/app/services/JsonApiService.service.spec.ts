@@ -41,6 +41,8 @@ const spy = jasmine.createSpyObj('JsonApiService', ['usersService']);
   //   // valueServiceSpy.get.and.returnValue(stubValue);
   //   // expect(masterService.getUser())
   //   //   .toBe(stubValue, 'service returned stub value');
+
+  //   //primero llamr al ngoinit
   //   tick(1);
   //   expect(valueServiceSpy.get.calls.mostRecent().returnValue).toBe(stubValue);
 
