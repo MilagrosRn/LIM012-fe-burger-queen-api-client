@@ -3,13 +3,14 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve -o",
+    "start": "node server.js",
     "build": "ng build",
     "test": "ng test --code-coverage",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "log": "git log --oneline --decorate --graph --all",
-    "json": "json-server --watch users.json"
+    "json": "json-server --watch users.json",
+    "postinstall": "ng build --aot --prod"
   },
   "private": true,
   "dependencies": {
@@ -22,6 +23,7 @@
     "@angular/platform-browser-dynamic": "~10.0.2",
     "@angular/router": "~10.0.2",
     "angular-confirmation-popover": "^6.0.0",
+    "express": "^4.17.1",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.3"
@@ -46,5 +48,9 @@
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
     "typescript": "~3.9.5"
+  },
+  "engines": {
+    "node": "~8.9.1",
+    "npm": "~6.0.0"
   }
 }
