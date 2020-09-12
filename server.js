@@ -1,24 +1,12 @@
-const jsonServer = require('json-server')
-const server = jsonServer.create()
-const router = jsonServer.router('users.json')
-const middlewares = jsonServer.defaults()
+const express = require('express');
 
-server.use(middlewares)
-server.use((req, res, next) => {
-    if (req.method === 'POST' && req.url === '/auth') {
-        if (req.body !== '') {
-            res.status(200).jsonp({
-                token: '12345.abcde.fdgfdg'
-            })
-        } else {
-            res.status(400).jsonp({
-                error: "Por favor, escribir email y password, ambos son necesarios."
-            })
-        }
-    } else { next() }
+const app = express();
 
-})
-server.use(router)
-server.listen(3000, () => {
-    console.log('JSON Server is running')
-}) 
+app.use(express.static('./dist/bq-api-client'));
+
+app.get('/*', function(req, res) {
+  res.sendFile('index.html', {root: 'dist/bq-api-client'}
+  );
+});
+
+app.listen(process.env.PORT || 8080);
