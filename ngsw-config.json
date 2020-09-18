@@ -1,5 +1,4 @@
 {
-  "$schema": "./node_modules/@angular/service-worker/config/schema.json",
   "index": "/index.html",
   "assetGroups": [
     {
@@ -25,5 +24,19 @@
         ]
       }
     }
-  ]
+  ],
+  "dataGroups": [{
+    "name": "api-performance",
+    "urls": [
+      "http://ec2-13-58-43-131.us-east-2.compute.amazonaws.com/auth/**",
+      "http://ec2-13-58-43-131.us-east-2.compute.amazonaws.com/users/**",
+      "http://ec2-13-58-43-131.us-east-2.compute.amazonaws.com/products/**",
+      "http://ec2-13-58-43-131.us-east-2.compute.amazonaws.com/orders/**"
+    ],
+    "cacheConfig": {
+      "maxSize": 10000,
+      "maxAge": "3d",
+      "strategy": "performance"
+    }
+  }]
 }

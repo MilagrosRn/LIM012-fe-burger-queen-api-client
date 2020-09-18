@@ -7,6 +7,18 @@ import { environment } from 'src/environments/environment';
 describe('Service: JsonApiService', () => {
   let service: JsonApiService;
   let httpMock: HttpTestingController;
+
+  beforeAll(() => {
+    const authUser = {
+      'token': 'abcdefghi123456789',
+      };
+    localStorage.setItem('usuario', JSON.stringify(authUser));
+  });
+
+  afterAll(() => {
+    localStorage.removeItem('usuario');
+  });
+
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [JsonApiService],
@@ -70,16 +82,23 @@ describe('Service: JsonApiService', () => {
     method.flush(update)
   });
 
-  it('should delete product of the list', () => {
-    let serviceSpy: any;
-    serviceSpy = spyOn(service, 'deleteUser').and.returnValue(of({}));
-    service.deleteUser('IJWp222')
-      .subscribe((resp: any) => {
-        expect(resp).toEqual({});
+  it('should delete product of the list', (done: DoneFn) => {
+    // let serviceSpy: any;
+    // serviceSpy = spyOn(service, 'deleteUser').and.returnValue(of({}));
+    // service.deleteUser('IJWp222')
+    //   .subscribe((resp: any) => {
+    //     expect(resp).toEqual({});
+    //   });
+
+      const final = [];
+      service.deleteUser('test@test').subscribe((resp:any) => {
+        expect(resp).toBe(final);
+        done();
       });
+
+      const method = httpMock.expectOne(environment.apiUrl + 'users/test@test');
+      expect(method.request.method).toContain('DELETE');
+      method.flush(final);
   });
-
-
-
 
 });

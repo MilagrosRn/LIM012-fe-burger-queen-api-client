@@ -62,7 +62,7 @@
                 }
               ],
               "serviceWorker": true,
-              "ngswConfigPath": "src/ngsw-config.json"
+              "ngswConfigPath": "ngsw-config.json"
             }
           }
         },
@@ -125,6 +125,10 @@
               "devServerTarget": "bq-api-client:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
     }
